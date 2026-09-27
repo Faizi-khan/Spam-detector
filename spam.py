@@ -31,4 +31,13 @@ y_pred = model.predict(X_test_vec)
 
 print(classification_report(y_test, y_pred))
 print(confusion_matrix(y_test, y_pred))
+from sklearn.linear_model import LogisticRegression
+
+lr_model = LogisticRegression(max_iter=1000)
+lr_model.fit(X_train_vec, y_train)
+y_pred_lr = lr_model.predict(X_test_vec)
+
+print("\n--- Logistic Regression Results ---")
+print(classification_report(y_test, y_pred_lr))
+print(confusion_matrix(y_test, y_pred_lr))
 
